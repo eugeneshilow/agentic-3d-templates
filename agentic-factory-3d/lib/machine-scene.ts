@@ -1152,11 +1152,13 @@ export function initMachineScene(root: HTMLElement, fontFamily: string): () => v
       mobile = width <= 900
       renderer.setSize(width, height)
       camera.aspect = width / height
-      // A shifted frustum centers the object in the right 58%, without moving the orbit target.
+      // Embedded in a wide landing hero, a shifted frustum centers the object in the right 58%
+      // (the host page's headline goes on the left), without moving the orbit target. The full
+      // page and narrow frames keep the machine in the middle.
       camera.setViewOffset(
         width,
         height,
-        mobile ? 0 : -width * 0.21,
+        mobile || !embedded ? 0 : -width * 0.21,
         mobile || embedded ? 0 : height * 0.025,
         width,
         height
@@ -1576,7 +1578,12 @@ export function initMachineScene(root: HTMLElement, fontFamily: string): () => v
             ]
         let x = (anchor.x * 0.5 + 0.5) * width - 40 + offsets[i][0],
           y = (-anchor.y * 0.5 + 0.5) * height - 52 + offsets[i][1]
-        x = THREE.MathUtils.clamp(x, mobile ? 9 : width * 0.425, width - (mobile ? 123 : 165))
+        // Embedded in a wide hero the callouts stay out of the headline side (the left 42.5%).
+        x = THREE.MathUtils.clamp(
+          x,
+          mobile || !embedded ? 9 : width * 0.425,
+          width - (mobile ? 123 : 165)
+        )
         y = THREE.MathUtils.clamp(y, 130, height - 200)
         s.label.style.transform = `translate(${x}px,${y}px)`
       })

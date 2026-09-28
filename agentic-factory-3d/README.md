@@ -23,9 +23,9 @@ break and change shape at every station:
   (the camera follows a single order from the first card to the receipt)
 - Five cameras: Overview, Side, Top, Station, Flight; a slow cinematic orbit
   when nobody touches it; hover a station to highlight it, click to fly to it
-- Built for a landing page: above 900 px the machine stands in the right 58 %
-  of the frame and leaves the left side dark for your headline; below 900 px
-  it is centered
+- Built for a landing page: in embed mode above 900 px the machine stands in
+  the right 58 % of the frame and leaves the left side dark for your headline;
+  the full page and frames below 900 px keep it centered
 - **Embed mode** (`?embed=1`) and a small API: `window.__machine` plus
   `postMessage` both ways
 - No models, no images: every part, and every screen inside the scene, is
@@ -173,8 +173,9 @@ poster. The port keeps the geometry, the numbers and the animation of that
 version; it moves three.js to npm, splits the page into a React component
 and a scene module with a proper dispose, translates every label and every
 in-scene screen into English (prices in dollars), replaces the course
-chapters in the callouts with each station's step in the order flow, and
-changes the footer link to a credit line.
+chapters in the callouts with each station's step in the order flow,
+changes the footer link to a credit line, and centers the machine on the full
+page (the right-58 % layout stays for embed mode).
 
 <details>
 <summary>The prompt, translated from Russian</summary>

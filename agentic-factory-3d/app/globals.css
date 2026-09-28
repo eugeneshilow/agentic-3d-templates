@@ -67,7 +67,7 @@ a:focus-visible {
   inset: 0;
   pointer-events: none;
   background: radial-gradient(
-    ellipse at 71% 48%,
+    ellipse at 50% 48%,
     transparent 30%,
     rgba(0, 0, 0, 0.12) 64%,
     rgba(0, 0, 0, 0.65) 100%
@@ -137,8 +137,8 @@ a:focus-visible {
 .scene-heading {
   position: absolute;
   top: 110px;
-  left: 45%;
-  right: 32px;
+  left: 24%;
+  right: 24%;
   pointer-events: none;
   display: flex;
   align-items: center;
@@ -177,7 +177,7 @@ a:focus-visible {
 .controls {
   position: absolute;
   bottom: 79px;
-  left: 43%;
+  left: 26px;
   right: 26px;
   display: flex;
   align-items: center;
@@ -408,8 +408,8 @@ svg {
 }
 #journey {
   position: absolute;
-  left: 46%;
-  right: 35px;
+  left: 24%;
+  right: 24%;
   top: 148px;
   opacity: 0;
   transform: translateY(-5px);
@@ -456,7 +456,7 @@ svg {
 }
 #loading {
   position: absolute;
-  left: 71%;
+  left: 50%;
   top: 48%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -486,8 +486,8 @@ svg {
 }
 #error {
   position: absolute;
-  left: 48%;
-  right: 7%;
+  left: 27.5%;
+  right: 27.5%;
   top: 40%;
   border: 1px solid #ff7a1a30;
   background: #191b1f;
@@ -529,13 +529,23 @@ svg {
 .embed .wordmark {
   opacity: 0.65;
 }
+/* Embedded in a wide hero the machine stands in the right 58% (see layoutCamera
+   in lib/machine-scene.ts): the loader and the error card follow it there. */
+@media (min-width: 901px) {
+  .embed #loading {
+    left: 71%;
+  }
+  .embed #error {
+    left: 48%;
+    right: 7%;
+  }
+}
 @media (min-width: 1600px) {
   .topbar {
     inset: 38px 46px auto;
   }
   .scene-heading {
     top: 142px;
-    right: 46px;
   }
   .controls {
     bottom: 100px;
