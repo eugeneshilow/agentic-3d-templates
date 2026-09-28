@@ -1,0 +1,4 @@
+# Standalone project: this file keeps pnpm from treating a parent folder as the workspace root.
+onlyBuiltDependencies:
+  - sharp
+  - unrs-resolver

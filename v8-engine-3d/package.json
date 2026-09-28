@@ -1,0 +1,35 @@
+{
+  "name": "v8-engine-3d",
+  "version": "1.0.0",
+  "private": true,
+  "description": "V8 Engine: an interactive, fully procedural 3D V8 engine in three.js, with cutaway, exploded and single-cylinder views, live valve and pressure charts.",
+  "type": "module",
+  "packageManager": "pnpm@10.17.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "format": "prettier --write ."
+  },
+  "dependencies": {
+    "next": "16.3.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "three": "0.169.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "@types/three": "0.169.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.3.3",
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3"
+  }
+}
